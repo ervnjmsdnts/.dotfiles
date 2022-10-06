@@ -1,0 +1,13 @@
+[user]
+	name = ervnjmsdnts
+	email = earvinjamesdantes@gmail.com
+
+[credential]
+	helper = !aws codecommit credential-helper $@
+	useHTTpPath = true
+
+[core]
+	whitespace = cr-at-eol
+
+# [url "https://"]
+# 	insteadOf = git://

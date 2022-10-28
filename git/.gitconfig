@@ -4,7 +4,7 @@
 
 [credential]
 	helper = !aws codecommit credential-helper $@
-	useHTTpPath = true
+	UseHttpPath = true
 
 [core]
 	whitespace = cr-at-eol

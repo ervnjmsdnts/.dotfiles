@@ -4,8 +4,9 @@ if (not status) then return end
 local status2, masonLsp = pcall(require, 'mason-lspconfig')
 if (not status2) then return end
 
-mason.setup {}
+mason.setup({})
 masonLsp.setup {
-  ensure_installed = { 'tailwindcss' }
+  automatic_installation = true
 }
 
+require 'lspconfig'.tailwindcss.setup{}

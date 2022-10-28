@@ -12,8 +12,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias root="cd ~"
-alias ll="ls -a"
+alias ll="ls -al"
 alias lg="lazygit"
+alias python="python3"
+alias pip="pip3"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -22,4 +24,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm use --lts --silent
+nvm use 16 --silent
+

@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gt", "<Cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	buf_set_keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "gr", "<Cmd> lua vim.lsp.buf.references()<CR>", opts)
-	buf_set_keymap("n", "<c-k>", "<Cmd> lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_set_keymap("n", "<C-k>", "<Cmd> lua vim.lsp.buf.signature_help()<CR>", opts)
 end
 
 protocol.CompletionItemKind = {
@@ -109,7 +109,7 @@ nvim_lsp.tailwindcss.setup({
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	update_in_insert = false,
-	virtual_text = { spacing = 4, prefix = "●" },
+	virtual_text = false,
 	severity_sort = true,
 })
 
@@ -121,11 +121,10 @@ for type, icon in pairs(signs) do
 end
 
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "●",
-	},
-	update_in_insert = true,
-	float = {
-		source = "always", -- Or "if_many"
-	},
+	severity_sort = true,
+	virtual_text = false,
 })
+
+vim.o.updatetime = 250
+
+vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])

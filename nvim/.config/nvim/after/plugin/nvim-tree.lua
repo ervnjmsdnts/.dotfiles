@@ -29,6 +29,7 @@ nvim_tree.setup({
 	git = {
 		enable = true,
 		timeout = 500,
+		ignore = false,
 	},
 	actions = {
 		open_file = {

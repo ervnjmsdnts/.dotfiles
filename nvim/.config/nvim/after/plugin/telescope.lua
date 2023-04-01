@@ -21,7 +21,7 @@ local keymap = vim.keymap
 
 keymap.set("n", "<leader>f", function()
 	builtin.find_files({
-		no_ignore = false,
+		no_ignore = true,
 		hidden = true,
 		cwd = vim.fn.FindRootDirectory(),
 	})
